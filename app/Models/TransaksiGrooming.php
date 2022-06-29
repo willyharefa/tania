@@ -9,7 +9,7 @@ class TransaksiGrooming extends Model
 {
     use HasFactory;
     protected $table = 'transaksi_groomings';
-    protected $guarded = [];
+    protected $guarded = ['id'];
 
     public function user()
     {

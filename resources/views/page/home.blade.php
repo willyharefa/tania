@@ -59,7 +59,7 @@
                                         </ul>
                                     </nav>
                                 </div>
-                                <div class="header-right-btn f-right d-none d-lg-block ml-30">
+                                <div class="header-right-btn f-right d-lg-block ml-30">
                                     <a href="/dashboard" class="header-btn">Dashboard</a>
                                 </div>
                             </div>

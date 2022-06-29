@@ -48,6 +48,7 @@ class PesanController extends Controller
 
         $harga = Item::select('price')->where('id', Request()->input('item_id'))->get()[0]->price;
         $validated['user_id'] = auth()->user()->id;
+        $validated['hp'] = auth()->user()->hp;
         $validated['sub_price'] = $harga * $validated['qty'];
         Pesan::insert($validated);
         return redirect('/page/item')->with(['berhasil' => true]);
@@ -101,6 +102,7 @@ class PesanController extends Controller
         $result = Pesan::where('user_id', $pesan->user_id)->get();
         $total_price = 0;
         $id = rand();
+        // dd($result[0]->item);
         foreach($result as $r) {
             $total_price += $r->sub_price;
             TransaksiPesan::create([
@@ -112,7 +114,7 @@ class PesanController extends Controller
             ]);
         }
         TransaksiMaster::create([
-            'id' => $id,
+            'id' =>$id,
             'user_id' => $pesan->user_id,
             'total_price' => $total_price,
             'status' => 'pesanan'
@@ -128,7 +130,7 @@ class PesanController extends Controller
         ]);
     }
     
-    public function transaksi() {
+    public function xtransaksi() {
         return view('pesanan.transaksi', [
             'title' => 'Transaksi Pesanan',
             'transaksi' => TransaksiMaster::with('user')->where('status', 'pesanan')->get()
@@ -139,6 +141,12 @@ class PesanController extends Controller
         return view('pesanan.detail_transaksi', [
             'title' => 'Detail Transaksi',
             'transaksi' => TransaksiPesan::with('user')->where('transaksi_master_id', $tm)->get()
+        ]);
+    }
+    public function transaksi() {
+        return view('pesanan.transaksi', [
+            'title' => 'Transaksi Pesanan',
+            'transaksi' => TransaksiMaster::with('user')->where('status', 'pesanan')->get()
         ]);
     }
 }

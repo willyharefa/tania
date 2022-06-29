@@ -42,4 +42,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Grooming::class);
     }
+
+    public function user()
+    {
+        return $this->hasMany(TransaksiPesan::class);
+    }
 }

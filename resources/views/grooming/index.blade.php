@@ -16,6 +16,7 @@
             <tfoot>
                 <tr>
                     <th>Nama User</th>
+                    <th>No HP</th>
                     <th>Action</th>
                 </tr>
             </tfoot>
@@ -23,6 +24,7 @@
                 @foreach ($groomings as $grooming)
                     <tr>
                         <td>{{ $grooming->user->name }}</td>
+                        <td>{{ $grooming->user->hp }}</td>
                         <td>
                             <a href="/grooming/lihat/{{ $grooming->user_id }}" class="btn btn-info">Lihat</a>
                             {{-- <a href="/grooming/selesai/{{ $grooming->id }}" class="btn btn-success">Selesai</a> --}}

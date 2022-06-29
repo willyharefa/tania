@@ -26,7 +26,7 @@ use App\Http\Controllers\DashboardController;
 
 // page
 
-Route::get('/', [PageController::class, 'index'])->middleware('auth');
+Route::get('/', [PageController::class, 'index'])->middleware('auth')->name('home');
 Route::get('/page/item', [PageController::class, 'page_item']);
 Route::get('/page/grooming', [PageController::class, 'page_grooming']);
 Route::post('/page/grooming', [PageController::class, 'page_booking']);

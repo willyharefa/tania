@@ -15,12 +15,10 @@ return new class extends Migration
     {
         Schema::create('transaksi_masters', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->unsigned();
+            $table->integer('user_id');
             $table->integer('total_price');
             $table->string('status');
             $table->timestamps();
-
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

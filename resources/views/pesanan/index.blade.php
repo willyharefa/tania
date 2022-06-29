@@ -16,6 +16,7 @@
             <tfoot>
                 <tr>
                     <th>Nama Pemesan</th>
+                    <th>No HP</th>
                     <th>Action</th>
                 </tr>
             </tfoot>
@@ -23,6 +24,7 @@
                 @foreach ($pesanans as $pesan)
                     <tr>
                         <td>{{ $pesan->user->name }}</td>
+                        <td>{{ $pesan->user->hp }}</td>
                         <td>
                             <a href="/pesanan/lihat/{{ $pesan->user_id }}" class="btn btn-info">Lihat</a>
                             {{-- <a href="/pesanan/selesai/{{ $pesan->id }}" class="btn btn-success" onclick="return confirm('Selesai?')">Selesai</a> --}}

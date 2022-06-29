@@ -60,11 +60,12 @@ class Controller extends BaseController
 
         User::create([
             'name' => $request->name,
+            'hp' => $request->hp,
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'role' => 2,
         ]);
-        return redirect()->route('login');
+        return redirect()->route('home');
         
     }
 }

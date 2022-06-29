@@ -30,6 +30,10 @@
                                                 <input class="form-control" id="email" name="email" type="email" placeholder="name@example.com" />
                                                 <label for="email">Email</label>
                                             </div>
+                                            <div class="form-floating mb-3">
+                                                <input class="form-control" id="hp" name="hp" type="hp" placeholder="+6286100000" />
+                                                <label for="email">Nomor HP</label>
+                                            </div>
                                             <div class="row mb-3">
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">

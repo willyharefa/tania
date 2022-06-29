@@ -15,11 +15,11 @@ return new class extends Migration
     {
         Schema::create('groomings', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->unsigned();
+            $table->integer('user_id');
             $table->date('tanggal');
             $table->time('jam');
             $table->timestamps();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            // $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

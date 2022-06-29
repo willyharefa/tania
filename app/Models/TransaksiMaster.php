@@ -9,7 +9,9 @@ class TransaksiMaster extends Model
 {
     use HasFactory;
     protected $table = 'transaksi_masters';
-    protected $guarded = [];
+    protected $fillable = [
+        'user_id', 'total_price', 'status', 'id'
+    ];
 
     public function user()
     {

@@ -15,14 +15,14 @@ return new class extends Migration
     {
         Schema::create('transaksi_groomings', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('transaksi_master_id');
-            $table->unsignedBigInteger('user_id');
+            $table->integer('transaksi_master_id');
+            $table->integer('user_id');
             $table->date('tanggal');
             $table->time('jam');
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('transaksi_master_id')->references('id')->on('transaksi_masters')->onDelete('cascade')->onUpdate('cascade');
+            // $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            // $table->foreign('transaksi_master_id')->references('id')->on('transaksi_masters')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

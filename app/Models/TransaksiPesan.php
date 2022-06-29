@@ -9,7 +9,7 @@ class TransaksiPesan extends Model
 {
     use HasFactory;
     protected $table = 'transaksi_pesans';
-    protected $guarded = [];
+    protected $guarded = ['id'];
     public function user()
     {
         return $this->belongsTo(User::class);
